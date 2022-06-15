@@ -1,10 +1,12 @@
 @extends('layouts.default')
 
-@section('pageTitle', 'Comics - Fumetti')
-    
+@section('pageTitle', 'Comics - Lista Fumetti')
+
 @section('mainContent')
 <main>
   <div class="container">
+
+<h1 class="text-center">Comics - Lista Fumetti</h1>
     <table class="table">
       <thead>
         <tr>
@@ -35,7 +37,7 @@
               <td>{{$comic->series}}</td>
               <td>{{$comic->sale_date}}</td>
               <td>{{$comic->type}}</td>
-              {{-- <td> <a href="{{route('comics/show',$comic->id)}}" class="btn-info">Visualizza</a></td>
+              {{-- <td> <a href="{{route('comics/show', $comics->id)}}" class="btn-info">Visualizza</a></td>
               <td> <a href="{{route('comics/show',$comic->id)}}" class="btn-warning">Modifica</a></td>
               <td> <a href="{{route('comics/show',$comic->id)}}" class="btn-danger">Cancella</a></td> --}}
             </tr>

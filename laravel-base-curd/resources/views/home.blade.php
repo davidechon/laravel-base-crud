@@ -1,11 +1,12 @@
 @extends('layouts.default')
 
-@section('pageTitle', 'Comics')
+@section('pageTitle','Comics - Home page')
     
 @section('mainContent')
 <main>
-  <div class="container">
-    <h1>Comics</h1>
-  </div>
+<h1 class="text-center">Comics - Home page</h1>
+
+
+
 </main>
 @endsection

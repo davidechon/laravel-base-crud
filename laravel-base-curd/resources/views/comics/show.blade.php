@@ -2,13 +2,13 @@
 
 @section('pageTitle', 'Comics - Fumetti')
 
-@section('')
+@section('mainContent')
 <main>
   <div class="container">
-    <h1>{{$comic->title}}</h1>
+    <h1>{{$comics->title}}</h1>
     <div>
-      <img src="{{$comic-thumb}}" alt="">
-      <p>{{$comic->description}}</p>
+      <img src="{{$comics-thumb}}" alt="">
+      <p>{{$comics->description}}</p>
     </div>
   </div>
 </main>
