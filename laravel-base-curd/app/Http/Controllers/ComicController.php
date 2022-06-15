@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comic;
 
-class ComicsController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,12 +45,11 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comics) // al posto dell'id 
+    public function show(Comic $id) // al posto dell'id 
     {
-        // $prodotto = Product::findOrFail($id);
-        dump($comics);
-        // return view('comics.show', compact('comic'));
-        // return view('products.show', compact('prodotto'));
+       $comics = Comic::findOrFail($id);
+        // dump($comics);
+       return view('comics.show', compact(comic));
     }
 
     /**
