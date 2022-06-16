@@ -3,7 +3,6 @@
 @section('pageTitle', 'Comics - Lista Fumetti')
 
 @section('mainContent')
-<main>
   <div class="container">
 
 <h1 class="text-center">Comics - Lista Fumetti</h1>
@@ -37,14 +36,20 @@
               <td>{{$comic->series}}</td>
               <td>{{$comic->sale_date}}</td>
               <td>{{$comic->type}}</td>
-              {{-- <td> <a href="{{route('comics/show', $comics->id)}}" class="btn-info">Visualizza</a></td>
-              <td> <a href="{{route('comics/show',$comic->id)}}" class="btn-warning">Modifica</a></td>
-              <td> <a href="{{route('comics/show',$comic->id)}}" class="btn-danger">Cancella</a></td> --}}
+              <td> <a href="{{route('comics.show', $comic->id)}}" class="btn btn-info">Visualizza</a></td>
+              <td> <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-warning">Modifica</a></td>
+              <td> 
+                <form action='{{route('comics.destroy',$comic->id)}}' method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btn-danger">Elimina</button>
+                </form>
+                 </td>
             </tr>
           @endforeach
       </tbody>
     </table>
   </div>
-</main>
+
     
 @endsection

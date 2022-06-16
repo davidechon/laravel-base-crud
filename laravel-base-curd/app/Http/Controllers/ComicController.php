@@ -62,9 +62,9 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     // public function show(Comic $id) // al posto dell'id 
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::find($id);
+        // $comic = Comic::find($id);
         if($comic){
             return view('comics.show', compact('comic'));
         }
@@ -90,18 +90,17 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $id)
+    public function update(Request $request, Comic $comic)
     {
         $data = $request->all();
-        $comic = Comic::findOrFail($id);
 
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date = $data['sale_date'];
-        $comic->type = $data['type'];
+        // $comic->title = $data['title'];
+        // $comic->description = $data['description'];
+        // $comic->thumb = $data['thumb'];
+        // $comic->price = $data['price'];
+        // $comic->series = $data['series'];
+        // $comic->sale_date = $data['sale_date'];
+        // $comic->type = $data['type'];
 
         $comic->update($data);
 
